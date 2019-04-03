@@ -21,7 +21,8 @@ public class Router {
                 .andRoute(GET(RouterUtils.PlanetRoute.PATH_BY_ID).and(accept(APPLICATION_JSON)), planetHandler::findById)
                 .andRoute(GET(RouterUtils.PlanetRoute.PATH_BY_NAME).and(accept(APPLICATION_JSON)), planetHandler::findByName)
                 .andRoute(POST(RouterUtils.PlanetRoute.PATH).and(accept(APPLICATION_JSON)).and(contentType(APPLICATION_JSON)), planetHandler::create)
-                .andRoute(DELETE(RouterUtils.PlanetRoute.PATH_BY_ID), planetHandler::delete);
+                .andRoute(DELETE(RouterUtils.PlanetRoute.PATH_BY_ID), planetHandler::delete)
+                .andRoute(GET(RouterUtils.StarWarsRoute.PATH), planetHandler::allPlanetApi);
     }
 
     @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -33,9 +34,13 @@ public class Router {
         public static class PlanetRoute {
             public static final String PATH = CONTEXT + "/planets";
             public static final String PATH_BY_ID = CONTEXT + "/planets/{id}";
-            public static final String PATH_BY_NAME = CONTEXT + "/planets/name/{name}";
+            public static final String PATH_BY_NAME = CONTEXT + "/planets/filterByName/{name}";
         }
 
+        @NoArgsConstructor(access = AccessLevel.PRIVATE)
+        public static class StarWarsRoute {
+            public static final String PATH = CONTEXT + "/swapi/api/planets";
+        }
     }
 
 }

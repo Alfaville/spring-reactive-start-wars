@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.desafio</groupId>
-	<artifactId>star-wars </artifactId>
+	<artifactId>star-wars-reactive</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>star-wars </name>
 	<description>Demo project for Spring Boot</description>

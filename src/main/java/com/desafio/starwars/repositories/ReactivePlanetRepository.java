@@ -4,7 +4,7 @@ import com.desafio.starwars.entity.PlanetEntity;
 import org.springframework.data.cassandra.repository.AllowFiltering;
 import org.springframework.data.cassandra.repository.ReactiveCassandraRepository;
 import org.springframework.stereotype.Repository;
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.UUID;
 
@@ -12,6 +12,6 @@ import java.util.UUID;
 public interface ReactivePlanetRepository extends ReactiveCassandraRepository<PlanetEntity, UUID> {
 
     @AllowFiltering
-    Flux<PlanetEntity> findAllByName(final String name);
+    Mono<PlanetEntity> findAllByName(final String name);
 
 }

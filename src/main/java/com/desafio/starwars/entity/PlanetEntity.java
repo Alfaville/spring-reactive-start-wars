@@ -19,4 +19,7 @@ public class PlanetEntity {
     private String terrain;
 
     private String climate;
+
+    private int filmsQuantity;
+
 }
