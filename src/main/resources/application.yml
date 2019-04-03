@@ -1,0 +1,8 @@
+server:
+  port: 8080
+spring:
+  data:
+    cassandra:
+      keyspace-name: dev_test
+      contact-points: localhost
+      schema-action: RECREATE  #CREATE_IF_NOT_EXISTS
